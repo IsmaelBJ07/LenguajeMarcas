@@ -1,0 +1,21 @@
+h1{
+    color: red;
+}
+h2{
+    text-align: center;
+}
+h2.T1 {
+    color: blue;
+}
+h2.T2{
+    color: green;
+}
+div{
+    background-color: gray;
+}
+div.datospersonales{
+    border-style: solid;
+}
+div.estudios {
+    border-style:double;
+}
