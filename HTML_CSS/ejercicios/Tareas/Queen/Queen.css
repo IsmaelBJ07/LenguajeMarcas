@@ -1,0 +1,98 @@
+
+  body {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #F0F0F0;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Cabecera */
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* Encabezados h1, h2 */
+  h1, h2 {
+    font-family: 'Georgia', serif;
+    color: #2C3E50;
+  }
+  
+  /* Contenido principal */
+  main {
+    background-color: #FFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 2rem;
+  }
+  
+  /* Imagen de la banda de Queen */
+  .imagen-banda {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .photo {
+    border-radius: 10px;
+  }
+  
+  /* Lista de los integrantes */
+  .lista-integrantes ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  /* Tabla de éxitos */
+  .tabla-exitos table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left:auto;
+    margin-right: auto;
+  }
+  
+  .tabla-exitos th,
+  .tabla-exitos td {
+    border: 1px solid #DDD;
+  }
+  
+  .tabla-exitos th {
+    background-color: #2C3E50;
+    color: white;
+    text-align: center;
+  }
+  
+  .tabla-exitos td, .tabla-exitos th {
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  
+  /* Enlace de la página web de Queen */
+  .enlace-web a {
+    color: #E74C3C;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .enlace-web a:hover {
+    color: #C0392B;
+  }
+  
+  /* Pie de página */
+  footer {
+    color: #7F8C8D;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
