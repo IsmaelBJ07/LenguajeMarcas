@@ -33,6 +33,7 @@
     margin: 0 auto;
     border-radius: 10px;
     padding: 2rem;
+    flex: 1;
   }
   
   /* Imagen de la banda de Queen */
@@ -78,13 +79,13 @@
   }
   
   /* Enlace de la página web de Queen */
-  .enlace-web a {
+  .enlace-web {
     color: #E74C3C;
     text-decoration: none;
     font-weight: bold;
   }
   
-  .enlace-web a:hover {
+  .enlace-web:hover {
     color: #C0392B;
   }
   
