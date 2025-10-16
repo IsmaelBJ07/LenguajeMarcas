@@ -1,0 +1,87 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Cabecera */
+  header {
+    background-color: #F5A623;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* Encabezados h1 */
+  h1 {
+    margin: 0;
+   }
+  
+  /* Contenido principal */
+  main {
+    background-color: beige;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+
+  .receta {
+    background-color: white;
+    color: #333;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  /* Imagen de Patatas*/
+  .imagen-receta {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .photo {
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .receta h1, h2 {
+    color: #F5A623;
+  }
+
+  .receta h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Lista de los ingredientes */
+  .lista-ingredientes ul {
+    list-style-type: square;
+    padding-left: 20px;
+  }
+
+  .lista-ingredientes li {
+    margin-bottom: 10px;
+  }
+
+  .elaboracion {
+    line-height: 1.6;
+  }
+    
+  /* Pie de página */
+  footer {
+    color: white;
+    background-color: #333;
+    text-align: center;
+    padding: 15px;
+  }
