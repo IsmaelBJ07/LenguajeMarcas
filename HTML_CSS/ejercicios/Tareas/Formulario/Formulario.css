@@ -1,0 +1,63 @@
+body {
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    align-items: center;
+    padding: 1rem;
+}
+.header img {
+    width: 300px;
+    height: 110px;
+}
+main {
+    padding: 2rem;
+}
+fieldset {
+    background-color: #F4F1ED;
+    color: firebrick;
+    border-color: darkgoldenrod;
+    border-radius: 7px;
+    width: 400px;
+}
+legend {
+    color: darkblue;
+    font-weight: bold;
+}
+.profesor, .correoelectronico, .departamento, .aula, .diaincidencia, .horaincidencia, .descripcionincidencia {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.imagenincidencia{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.botones {
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+footer h3{
+    color: #F7C600;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+}
+footer img{
+    width: 48px;
+    height: 48px;
+}

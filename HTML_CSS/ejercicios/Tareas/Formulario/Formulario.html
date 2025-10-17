@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Formulario.css">
+    </head>
+    <body>
+        <header>
+            <div class="imagenlogo">
+            <img src="imagenes/logo.jpg" alt="LogoDelCentro">
+            </div>
+        </header>
+        <main>
+            <fieldset>
+                <legend>Nueva incidencia</legend>
+                <form method="post">
+                    <div class="profesor">
+                        <label>Profesor *:</label>
+                        <input type="text" placeholder="Escribe tu nombre aqui.">
+                    </div>
+                    <div class="correoelectronico">
+                        <label>Correo electrónico *: </label>
+                        <input type="email" placeholder="Escribe tu correo aqui.">
+                    </div>
+                    <div class="departamento">
+                        <label>Departamento *: </label>
+                        <select name="Departamentos">
+                            <option value="Informática">Perro</option>
+                            <option value="Recursos humanos">Gato</option>
+                            <option value="Limpieza">Pájaro</option>
+                            <option value="Jefatura">Pez</option>
+                        </select>
+                    </div>
+                    <div class="aula">
+                        <label>Aula *: </label>
+                        <input type="text" placeholder="Indica aqui el aula de la incidencia.">
+                    </div>
+                    <div class="diaincidencia">
+                        <label>Día de la incidencia *: </label>
+                        <input type="week">
+                    </div>
+                    <div class="horaincidencia">
+                        <label>Hora de la incidencia *: </label>
+                        <input type="time">
+                    </div>
+                    <div class="descripcionincidencia">
+                        <label>Descripción de la incidencia *: </label>
+                        <textarea name="comentario"></textarea>
+                    </div>
+                    <div class="imagenincidencia">
+                        <label>Imagen de la incidencia (opcional):</label>
+                        <input type="file" name="imagen"> 
+                    </div>
+                    <div class="botones">
+                    <button type="submit" name="enviar">Enviar incidencia</button>
+                    <button type="reset" name="borrar">Borrar formulario</button>
+                    </div>
+                </form>
+            </fieldset>
+        </main>
+
+        <footer>
+            <h3> Síguenos</h3>
+            <a href="https://www.facebook.com/cpifpalanturing/">
+            <img src="imagenes/facebook.png" alt="facebook">
+            </a>
+            <a href="https://x.com/cpifpalanturing">
+            <img src="imagenes/twitter.png" alt="twitter">
+            </a>
+            <a href="https://www.instagram.com/cpifpalanturing/">
+            <img src="imagenes/insta.png" alt="instagram">
+            </a>
+            <a href="https://www.youtube.com/@cpifpalanturing">
+            <img src="imagenes/youtube.png" alt="youtube">
+            </a>
+            <a href="https://fpalanturing.es/">
+            <img src="imagenes/website.png" alt="website">
+            </a>
+        </footer>
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
