@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.menu-navegacion ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-navegacion li {
+    margin: 0 15px;
+}
+
+.menu-navegacion a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-navegacion a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.contenedor-mapas {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+}
+
+.map-card iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.map-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-card h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-nueva-york {
+    font-family: 'Roboto', sans-serif;
+}
+
+.titulo-los-angeles {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.titulo-londres {
+    font-family: 'Oswald', sans-serif;
+}
+
+.icono-ciudad {
+    width: 150px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.mapa {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 10px 0 0 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+}
