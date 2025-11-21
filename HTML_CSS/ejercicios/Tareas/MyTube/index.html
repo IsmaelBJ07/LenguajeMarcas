@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content = "Ismael Belhach Jiménez">
+    <title>MyTube</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <div class="logo-title">
+            <img src="imagenes/youtube.svg" alt="Logo de YouTube">
+            <h1>MyTube</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <button>
+                <img src="imagenes/search.svg" alt="Buscar">
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Menú de navegación lateral -->
+        <nav>
+            <ul>
+                <li>
+                    <img src="imagenes/home.svg" alt="Inicio">
+                    <a href="#">Inicio</a>
+                </li>
+                <li>
+                    <img src="imagenes/trending-up.svg" alt="Tendencias">
+                    <a href="#">Tendencias</a>
+                </li>
+                <li>
+                    <img src="imagenes/dollar-sign.svg" alt="Suscripciones">
+                    <a href="#">Suscripciones</a>
+                </li>
+                <li>
+                    <img src="imagenes/book.svg" alt="Biblioteca">
+                    <a href="#">Biblioteca</a>
+                </li>
+                <li>
+                    <img src="imagenes/thumbs-up.svg" alt="Vídeos que me gustan">
+                    <a href="#">Vídeos que me gustan</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main>
+            <!-- Sección de vídeos -->
+            <section class="videos">
+                <!-- Vídeo local -->
+                <div class="video-card">
+                    <h2>Reproducción de vídeo local</h2>
+                    <video controls poster="imagenes/poster.jpg">
+                        <source src="video/LinusTorvaldsNvidia.mp4">
+                        Tu navegador no soporta el elemento de vídeo.
+                    </video>
+                    <p>Linus Torvalds haciendo amigos</p>
+                </div>
+
+                <!-- Vídeo en streaming -->
+                <div class="video-card">
+                    <h2>Reproducción de vídeo en Streaming</h2>
+                    <video controls autoplay muted>
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4">
+                        Tu navegador no soporta el elemento de vídeo.
+                    </video>
+                    <p>Vídeo en Streaming que se reproduce automáticamente</p>
+                </div>
+
+                <!-- Vídeo de YouTube -->
+                <div class="video-card">
+                    <h2>Vídeo de YouTube</h2>
+                    <iframe src="https://www.youtube.com/embed/Q123YDN4tKE" allowfullscreen></iframe>
+                    <p>El podcast de Mariano en Aquí no hay quien viva</p>
+                </div>
+            </section>
+
+            <!-- Sección de audios -->
+            <section class="audios">
+                <!-- Audio local -->
+                <div class="audio-card">
+                    <h2>Reproducción de audio local</h2>
+                    <audio controls>
+                        <source src="audio/Ramones - Spider-Man.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p>Ramones – Spider-Man</p>
+                </div>
+
+                <!-- Audio en streaming -->
+                <div class="audio-card">
+                    <h2>Reproducción de audio en Streaming</h2>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p>Audio en Streaming - SoundHelix-Song-1</p>
+                </div>
+
+                <!-- Radio en streaming -->
+                <div class="audio-card">
+                    <h2>Reproducción de audio en Streaming - Radio Paradise (una emisora que ofrece una mezcla de rock, pop y otros géneros)</h2>
+                    <audio controls>
+                        <source src="http://stream.radioparadise.com/mp3-192" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p>Radio Paradise</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 MyTube. Todos los derechos reservados.</p>
+        <div>
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+</body>
+</html>
