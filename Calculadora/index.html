@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://mgx-backend-cdn.metadl.com/generate/images/751387/2026-01-14/d242aa16-5e71-45b2-8c78-964adb561ab2.png" type="image/png">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        <h1>CALCULADORA</h1>
+    </header>
+
+    <main>
+        <div class="calculadora">
+            <div id="pantalla" class="pantalla color-normal">0</div>
+            
+            <div class="botones">
+                <!-- Fila 1: 1/x, x², √, CE -->
+                <button class="btn btn-especial" id="btn-inverso" onclick="operacionInmediata('inverso')">
+                    <img src="https://mgx-backend-cdn.metadl.com/generate/images/751387/2026-01-14/1f02cbc4-9476-4cb3-9f41-85f3f5c189dc.png" alt="1/x">
+                </button>
+                <button class="btn btn-especial" id="btn-cuadrado" onclick="operacionInmediata('cuadrado')">
+                    <img src="https://mgx-backend-cdn.metadl.com/generate/images/751387/2026-01-14/1a094694-28cc-43bb-80e2-0c39058a17c5.png" alt="x²">
+                </button>
+                <button class="btn btn-especial" id="btn-raiz" onclick="operacionInmediata('raiz')">
+                    <img src="https://mgx-backend-cdn.metadl.com/generate/images/751387/2026-01-14/64ab0e5c-8603-4c61-9839-f85703d00845.png" alt="√">
+                </button>
+                <button class="btn btn-especial" id="btn-ce" onclick="borrarEntrada()">CE</button>
+
+                <!-- Fila 2: 7, 8, 9, C -->
+                <button class="btn" onclick="mostrarNumeroPantalla('7')">7</button>
+                <button class="btn" onclick="mostrarNumeroPantalla('8')">8</button>
+                <button class="btn" onclick="mostrarNumeroPantalla('9')">9</button>
+                <button class="btn btn-especial" id="btn-c" onclick="borrarTodo()">C</button>
+
+                <!-- Fila 3: 4, 5, 6, ⌫ -->
+                <button class="btn" onclick="mostrarNumeroPantalla('4')">4</button>
+                <button class="btn" onclick="mostrarNumeroPantalla('5')">5</button>
+                <button class="btn" onclick="mostrarNumeroPantalla('6')">6</button>
+                <button class="btn btn-especial" id="btn-retroceso" onclick="retroceder()">
+                    <img src="https://mgx-backend-cdn.metadl.com/generate/images/751387/2026-01-14/e438840f-5157-459c-a4b2-b8309b375b1e.png" alt="⌫">
+                </button>
+
+                <!-- Fila 4: 1, 2, 3, + -->
+                <button class="btn" onclick="mostrarNumeroPantalla('1')">1</button>
+                <button class="btn" onclick="mostrarNumeroPantalla('2')">2</button>
+                <button class="btn" onclick="mostrarNumeroPantalla('3')">3</button>
+                <button class="btn btn-operador" onclick="manejarOperador('+')">+</button>
+
+                <!-- Fila 5: 0, ., ÷, - -->
+                <button class="btn" onclick="mostrarNumeroPantalla('0')">0</button>
+                <button class="btn" id="btn-punto" onclick="mostrarPuntoPantalla()">.</button>
+                <button class="btn btn-operador" onclick="manejarOperador('/')">÷</button>
+                <button class="btn btn-operador" onclick="manejarOperador('-')">-</button>
+
+                <!-- Fila 6: = (2 columnas), ×, (espacio vacío) -->
+                <button class="btn btn-igual" onclick="calcularOperacion()">=</button>
+                <button class="btn btn-operador" onclick="manejarOperador('×')">×</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>ejercicio 01 ud 03 - lenguajes de marcas y sistemas de gestión de información</p>
+        <p class="nombre">tu nombre aquí - declaro que no he usado ia para realizar esta práctica</p>
+    </footer>
+
+    <script src="javascript.js"></script>
+</body>
+
+</html>

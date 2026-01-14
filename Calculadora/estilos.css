@@ -1,0 +1,192 @@
+/* Importar fuente Segment7Standard */
+@import url('https://fonts.cdnfonts.com/css/segment7');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0fff0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos de la cabecera */
+header {
+    background-color: #f0fff0;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    font-family: 'Segment7Standard', monospace;
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #000;
+}
+
+/* Estilos del main */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos de la calculadora */
+.calculadora {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 320px;
+}
+
+/* Estilos de la pantalla */
+.pantalla {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segment7Standard', monospace;
+    font-size: 2.5rem;
+    text-align: right;
+    padding: 15px;
+    border-radius: 10px;
+    height: 70px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+/* Colores de la pantalla según operación */
+.color-normal {
+    color: #fff;
+}
+
+.color-error {
+    color: red;
+}
+
+.color-suma {
+    color: #4bff4b;
+}
+
+.color-resta {
+    color: #ff884b;
+}
+
+.color-multiplicacion {
+    color: #ffbf00;
+}
+
+.color-division {
+    color: #00c8ff;
+}
+
+.color-inverso {
+    color: #b084ff;
+}
+
+.color-cuadrado {
+    color: #ff4bd8;
+}
+
+.color-raiz {
+    color: #00ffbf;
+}
+
+/* Grid de botones */
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Estilos de los botones */
+.btn {
+    background-color: #2d2d2d;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #3a3a3a;
+}
+
+/* Botones especiales (inverso, cuadrado, raíz, CE, C, retroceso) */
+.btn-especial {
+    background-color: #3b3b3b;
+}
+
+.btn-especial:hover {
+    background-color: #3a3a3a;
+}
+
+/* Botones de operadores (+, -, ×, ÷) */
+.btn-operador {
+    background-color: #4b4bff;
+}
+
+.btn-operador:hover {
+    background-color: #3a3a3a;
+}
+
+/* Botón igual */
+.btn-igual {
+    background-color: #ff9500;
+    grid-column: span 2;
+}
+
+.btn-igual:hover {
+    background-color: #3a3a3a;
+}
+
+/* Botón punto deshabilitado */
+.btn-deshabilitado {
+    background-color: #1e1e1e;
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn-deshabilitado:hover {
+    background-color: #1e1e1e;
+}
+
+/* Imágenes en botones */
+.btn img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #f0fff0;
+    color: #3d6b5d;
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+}
+
+footer .nombre {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
