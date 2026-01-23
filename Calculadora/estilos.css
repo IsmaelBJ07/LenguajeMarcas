@@ -1,27 +1,25 @@
-/* Importar fuente Segment7Standard */
 @import url('https://fonts.cdnfonts.com/css/segment7');
 
-/* Reset básico */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos del body */
+/* Body */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0fff0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    background-color: #f0fff0;
+    font-family: Arial, sans-serif;
 }
 
-/* Estilos de la cabecera */
+/* Header */
 header {
-    background-color: #f0fff0;
-    text-align: center;
     padding: 1rem;
+    text-align: center;
 }
 
 header h1 {
@@ -29,10 +27,9 @@ header h1 {
     font-size: 2.2rem;
     font-weight: 900;
     text-transform: uppercase;
-    color: #000;
 }
 
-/* Estilos del main */
+/* Main */
 main {
     flex: 1;
     display: flex;
@@ -40,153 +37,112 @@ main {
     align-items: center;
 }
 
-/* Estilos de la calculadora */
+/* Calculator */
 .calculadora {
-    background-color: #1f1f1f;
+    width: 320px;
     padding: 20px;
+    background-color: #1f1f1f;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    width: 320px;
 }
 
-/* Estilos de la pantalla */
+/* Screen */
 .pantalla {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Segment7Standard', monospace;
-    font-size: 2.5rem;
-    text-align: right;
-    padding: 15px;
-    border-radius: 10px;
     height: 70px;
     margin-bottom: 20px;
+    padding: 15px;
+    background-color: #000;
+    border-radius: 10px;
+    font-family: 'Segment7Standard', monospace;
+    font-size: 2.5rem;
     display: flex;
-    align-items: center;
     justify-content: flex-end;
+    align-items: center;
     overflow: hidden;
 }
 
-/* Colores de la pantalla según operación */
-.color-normal {
-    color: #fff;
-}
+/* Screen colors */
+.color-normal { color: #fff; }
+.color-error { color: red; }
+.color-suma { color: #4bff4b; }
+.color-resta { color: #ff884b; }
+.color-multiplicacion { color: #ffbf00; }
+.color-division { color: #00c8ff; }
+.color-inverso { color: #b084ff; }
+.color-cuadrado { color: #ff4bd8; }
+.color-raiz { color: #00ffbf; }
 
-.color-error {
-    color: red;
-}
-
-.color-suma {
-    color: #4bff4b;
-}
-
-.color-resta {
-    color: #ff884b;
-}
-
-.color-multiplicacion {
-    color: #ffbf00;
-}
-
-.color-division {
-    color: #00c8ff;
-}
-
-.color-inverso {
-    color: #b084ff;
-}
-
-.color-cuadrado {
-    color: #ff4bd8;
-}
-
-.color-raiz {
-    color: #00ffbf;
-}
-
-/* Grid de botones */
+/* Buttons grid */
 .botones {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 8px;
 }
 
-/* Estilos de los botones */
+/* Buttons */
 .btn {
-    background-color: #2d2d2d;
-    color: #fff;
+    height: 60px;                 /* 🔴 CLAVE: tamaño correcto */
     font-size: 1.3rem;
-    padding: 18px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    background-color: #2d2d2d;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn:hover {
     background-color: #3a3a3a;
 }
 
-/* Botones especiales (inverso, cuadrado, raíz, CE, C, retroceso) */
+/* Special buttons */
 .btn-especial {
     background-color: #3b3b3b;
 }
 
-.btn-especial:hover {
-    background-color: #3a3a3a;
-}
-
-/* Botones de operadores (+, -, ×, ÷) */
+/* Operator buttons */
 .btn-operador {
     background-color: #4b4bff;
 }
 
-.btn-operador:hover {
-    background-color: #3a3a3a;
-}
-
-/* Botón igual */
+/* Equal button */
 .btn-igual {
     background-color: #ff9500;
     grid-column: span 2;
 }
 
-.btn-igual:hover {
-    background-color: #3a3a3a;
-}
-
-/* Botón punto deshabilitado */
+/* Disabled */
 .btn-deshabilitado {
     background-color: #1e1e1e;
     opacity: 0.4;
     cursor: not-allowed;
 }
 
-.btn-deshabilitado:hover {
-    background-color: #1e1e1e;
-}
-
-/* Imágenes en botones */
+/* Images */
 .btn img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     filter: brightness(0) invert(1);
 }
 
-/* Estilos del pie de página */
+/* Footer */
 footer {
     background-color: #f0fff0;
     color: #3d6b5d;
-    text-align: center;
     padding: 1rem;
-    font-family: 'Arial', sans-serif;
+    text-align: center;
     font-size: 0.75rem;
     font-weight: 400;
-    text-transform: lowercase;
     letter-spacing: 2px;
+    text-transform: lowercase;
 }
 
 footer .nombre {
+    margin-top: 5px;
     font-size: 0.7rem;
     letter-spacing: 1px;
-    margin-top: 5px;
 }
+
+
