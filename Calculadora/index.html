@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
-    
 <head>
     <meta charset="UTF-8">
-    <title>Calculadora</title>
-    <link rel="icon" href="imagenes/calculator-icon-windows-v1.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DAM</title>
+    <link rel="icon" type="image/x-icon" href="imagenes/calculator-icon-windows-v1.ico">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/segment7" type="text/css"/>
     <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
-<header>
-    <h1>CALCULADORA</h1>
-</header>
 
-<main>
-    <div class="calculadora">
-        <div id="pantalla" class="pantalla color-normal">0</div>
+    <header class="estilo-cabecera">CALCULADORA</header>
 
-        <div class="botones">
-            <button class="btn btn-especial" onclick="operacionInmediata('inverso')">
-                <img src="imagenes/icon_1_over_x_white_normal.svg">
-            </button>
-            <button class="btn btn-especial" onclick="operacionInmediata('cuadrado')">
-                <img src="imagenes/icon_x_squared_white_normal.svg">
-            </button>
-            <button class="btn btn-especial" onclick="operacionInmediata('raiz')">
-                <img src="imagenes/icon_square_root_white_normal.svg">
-            </button>
-            <button class="btn btn-especial" onclick="borrarEntrada()">CE</button>
+    <main class="estilo-main">
+        <div class="estilo-calculadora">
+            <div id="pantalla" class="estilo-pantalla estilo-texto-normal">0</div>
 
-            <button class="btn" onclick="mostrarNumeroPantalla('7')">7</button>
-            <button class="btn" onclick="mostrarNumeroPantalla('8')">8</button>
-            <button class="btn" onclick="mostrarNumeroPantalla('9')">9</button>
-            <button class="btn btn-especial" onclick="borrarTodo()">C</button>
+            <div class="estilo-grid">
+                <button id="btn-ce" class="estilo-btn estilo-btn-gris-oscuro estilo-span-2">CE</button>
+                <button id="btn-c" class="estilo-btn estilo-btn-gris-oscuro">C</button>
+                <button id="btn-retroceso" class="estilo-btn estilo-btn-gris-oscuro ">
+                    <img src="imagenes/icon_backspace_white_normal.svg" alt="Retroceso" class="estilo-icono">
+                </button>
+                
+                <button id="btn-inverso" class="estilo-btn estilo-btn-gris-oscuro ">
+                    <img src="imagenes/icon_1_over_x_white_normal.svg" alt="Inverso" class="estilo-icono">
+                </button>
+                <button id="btn-cuadrado" class="estilo-btn estilo-btn-gris-oscuro">
+                    <img src="imagenes/icon_x_squared_white_normal.svg" alt="Cuadrado" class="estilo-icono">
+                </button>
+                <button id="btn-raiz" class="estilo-btn estilo-btn-gris-oscuro">
+                    <img src="imagenes/icon_square_root_white_normal.svg" alt="Raíz" class="estilo-icono">
+                </button>
+                <button id="btn-dividir" class="estilo-btn estilo-btn-azul">/</button>
 
-            <button class="btn" onclick="mostrarNumeroPantalla('4')">4</button>
-            <button class="btn" onclick="mostrarNumeroPantalla('5')">5</button>
-            <button class="btn" onclick="mostrarNumeroPantalla('6')">6</button>
-            <button class="btn btn-especial" onclick="retroceder()">
-                <img src="imagenes/icon_backspace_white_normal.svg">
-            </button>
+                <button id="btn-7" class="estilo-btn estilo-btn-gris-claro">7</button>
+                <button id="btn-8" class="estilo-btn estilo-btn-gris-claro">8</button>
+                <button id="btn-9" class="estilo-btn estilo-btn-gris-claro">9</button>
+                <button id="btn-multiplicar" class="estilo-btn estilo-btn-azul">x</button>
 
-            <button class="btn" onclick="mostrarNumeroPantalla('1')">1</button>
-            <button class="btn" onclick="mostrarNumeroPantalla('2')">2</button>
-            <button class="btn" onclick="mostrarNumeroPantalla('3')">3</button>
-            <button class="btn btn-operador" onclick="manejarOperador('+')">+</button>
+                <button id="btn-4" class="estilo-btn estilo-btn-gris-claro">4</button>
+                <button id="btn-5" class="estilo-btn estilo-btn-gris-claro">5</button>
+                <button id="btn-6" class="estilo-btn estilo-btn-gris-claro">6</button>
+                <button id="btn-restar" class="estilo-btn estilo-btn-azul">-</button>
 
-            <button class="btn" onclick="mostrarNumeroPantalla('0')">0</button>
-            <button class="btn" id="btn-punto" onclick="mostrarPuntoPantalla()">.</button>
-            <button class="btn btn-operador" onclick="manejarOperador('/')">/</button>
-            <button class="btn btn-operador" onclick="manejarOperador('-')">-</button>
+                <button id="btn-1" class="estilo-btn estilo-btn-gris-claro">1</button>
+                <button id="btn-2" class="estilo-btn estilo-btn-gris-claro">2</button>
+                <button id="btn-3" class="estilo-btn estilo-btn-gris-claro">3</button>
+                <button id="btn-sumar" class="estilo-btn estilo-btn-azul">+</button>
 
-            <button class="btn btn-igual" onclick="calcularOperacion()">=</button>
-            <button class="btn btn-operador" onclick="manejarOperador('×')">×</button>
+                <button id="btn-0" class="estilo-btn estilo-btn-gris-claro estilo-span-2">0</button>
+                <button id="btn-punto" class="estilo-btn estilo-btn-gris-claro">.</button>
+                <button id="btn-igual" class="estilo-btn estilo-btn-naranja">=</button>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
-<footer>
-    <p>Ejercicio 01 UD 03 - Lenguajes de marcas y sistemas de gestión de información</p>
-    <p class="nombre">TU NOMBRE - declaro que no he usado ia para realizar esta práctica</p>
-</footer>
+    <footer class="estilo-footer">
+        <p class="texto-ejercicio">Ejercicio 02 UD 03 - Lenguajes de marcas y sistemas de gestión de información.</p>
+        <p class="texto-nombre">PROYECTO REALIZADO POR: ISMAEL BELHACH JIMENEZ (DECLARO QUE NO HE USADO IA EN EL PROYECTO)</p>
+    </footer>
 
-<script src="javascript.js"></script>
+    <script src="js/javascript.js"></script>
 </body>
 </html>
