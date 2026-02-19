@@ -1,0 +1,547 @@
+/*****************************************************************************/
+/* Módulo profesional: Lenguajes de marcas y sistemas de gestión empresarial */
+/* Unidad didáctica 03 - Introducción a JavaScript                           */
+/* Proyecto: Piedra, papel, tijera, lagarto, Spock                           */
+/*****************************************************************************/
+
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #FF6584;
+    --accent-color: #36D1DC;
+    --dark-bg: #1A1A2E;
+    --darker-bg: #16213E;
+    --card-bg: #0F3460;
+    --text-light: #FFFFFF;
+    --text-dim: #B8B8D1;
+    --winner: #4ECDC4;
+    --loser: #FF6B6B;
+    --draw: #FFD166;
+    --border-radius: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*****************************************/
+/* Estilos comunes a todos los elementos */
+/*****************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/***************************************/
+/* Estilos para el cuerpo de la página */
+/***************************************/
+
+body {
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+    color: var(--text-light);
+}
+
+/*************************************************/
+/* Estilos para el contenido principal del juego */
+/*************************************************/
+
+main {
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/**************************/
+/* Estilos de la cabecera */
+/**************************/
+
+header {
+    text-align: center;
+    padding: 1rem;
+}
+
+.titulo-juego {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitulo-juego {
+    color: var(--text-dim);
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/*********************************/
+/* Estilos para el pie de página */
+/*********************************/
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+/************************************************************/
+/* Estilos de los elementos del contenedor del juego (main) */
+/************************************************************/
+
+.paneles-arriba {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    align-items: start;
+}
+
+.panel-seleccion-jugada {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    height: 100%;
+}
+
+.panel-seleccion-jugada h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.contenedor-elecciones-juego {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.boton-eleccion-jugada {
+    background: linear-gradient(135deg, var(--darker-bg), var(--card-bg));
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    padding: 1.2rem 0.8rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    min-height: 100px;
+}
+
+.boton-eleccion-jugada:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+}
+
+.boton-eleccion-jugada:active {
+    transform: translateY(-1px);
+}
+
+.icono-jugada {
+    font-size: 2rem;
+    transition: var(--transition);
+}
+
+.boton-eleccion-jugada:hover .icono-jugada {
+    transform: scale(1.1);
+}
+
+/*************************************/
+/* Estilos del panel de la "batalla" */
+/*************************************/
+
+.panel-batalla {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    height: 100%;
+}
+
+.panel-batalla h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.contenedor-jugadores {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.jugador {
+    flex: 1;
+    text-align: center;
+}
+
+.etiqueta-jugador {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mostrar-jugada {
+    background: var(--darker-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.mostrar-jugada.active {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--card-bg), rgba(108, 99, 255, 0.1));
+}
+
+.placeholder {
+    font-size: 2.5rem;
+    color: var(--text-dim);
+    opacity: 0.5;
+}
+
+.vs-circle {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+}
+
+/***********************************/
+/* Estilos del panel de resultados */
+/***********************************/
+
+/* NUEVO CONTENEDOR GRID PARA CUADRAR LA PARTE INFERIOR */
+.paneles-abajo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    align-items: center;
+}
+
+.contenedor-resultado {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.resultados {
+    text-align: center;
+}
+
+.mensaje-resultado {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.estadisticas-juego {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+}
+
+.panel-estadistica {
+    background: var(--darker-bg);
+    padding: 1.2rem 0.8rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.valor-estadistica {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.etiqueta-estadistica {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ganador {
+    color: var(--winner);
+    text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+    animation: celebrate 0.6s ease-in-out;
+}
+
+.perdedor {
+    color: var(--loser);
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+.empate {
+    color: var(--draw);
+    text-shadow: 0 0 10px rgba(255, 209, 102, 0.5);
+}
+
+/*******************************************************************/
+/* Estilos para mostrar las jugadas que reliza el jugador y la CPU */
+/*******************************************************************/
+
+.icono-jugada-grande {
+    font-size: 4rem;
+    animation: popIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.texto-jugada {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+/*********************************************************/
+/* Estilos de la parte optativa                          */
+/*********************************************************/
+
+.panel-opcional {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.btn-opcional {
+    background: linear-gradient(135deg, var(--darker-bg), var(--card-bg));
+    border: 2px solid transparent;
+    color: var(--text-light);
+    padding: 1.2rem;
+    border-radius: var(--border-radius);
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 220px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-opcional:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+}
+
+.btn-opcional:active {
+    transform: translateY(-1px);
+}
+
+/***********************/
+/* Efectos para el CSS */
+/***********************/
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes celebrate {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1) rotate(-5deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+    75% {
+        transform: scale(1.1) rotate(-5deg);
+    }
+}
+
+/*********************/
+/* Diseño Responsive */
+/*********************/
+
+@media (max-width: 968px) {
+    .top-panels {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        max-width: 500px;
+    }
+    
+    .selection-section, .panel-batalla {
+        margin: 0 auto;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0.5rem;
+    }
+    
+    body {
+        justify-content: flex-start;
+        padding: 1rem 0;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .title {
+        font-size: 1.6rem;
+    }
+    
+    .top-panels {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .choices-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .boton-eleccion-jugada {
+        min-height: 90px;
+        padding: 1rem 0.5rem;
+    }
+    
+    .icono-jugada {
+        font-size: 1.8rem;
+    }
+    
+    .contenedor-jugadores {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .vs-circle {
+        order: -1;
+        margin: 0.5rem 0;
+    }
+    
+    .estadisticas-juego {
+        grid-template-columns: 1fr;
+    }
+    
+    .mensaje-resultado {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .choices-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .title {
+        font-size: 1.4rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .icono-jugada {
+        font-size: 1.6rem;
+    }
+    
+    .icono-jugada-large {
+        font-size: 2.5rem;
+    }
+    
+    .mostrar-jugada {
+        min-height: 100px;
+        padding: 1rem;
+    }
+    
+    .mensaje-resultado {
+        font-size: 1.2rem;
+    }
+    
+    .valor-estadistica {
+        font-size: 1.3rem;
+    }
+}

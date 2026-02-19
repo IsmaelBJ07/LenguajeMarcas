@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel, Tijera, Lagarto, Spock</title>
+    <meta name="author" content="PON AQUÍ TU NOMBRE">
+    
+    <link rel="icon" type="image/svg+xml" href="imagenes/spock-hand-gesture.svg">
+    
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="titulo-juego">Piedra Papel Tijera Lagarto Spock</h1>
+        <p class="subtitulo-juego">El juego definitivo (con partes opcionales)</p>
+    </header>
+
+    <main>
+        
+        <div class="paneles-arriba">
+            
+            <section class="panel-seleccion-jugada">
+                <h2>Elige tu jugada</h2>
+                <div class="contenedor-elecciones-juego">
+                    <button class="boton-eleccion-jugada" id="btnPiedra" data-jugada="piedra">
+                        <div class="icono-jugada">🪨</div>
+                        <div>Piedra</div>
+                    </button>
+                    <button class="boton-eleccion-jugada" id="btnPapel" data-jugada="papel">
+                        <div class="icono-jugada">📄</div>
+                        <div>Papel</div>
+                    </button>
+                    <button class="boton-eleccion-jugada" id="btnTijera" data-jugada="tijera">
+                        <div class="icono-jugada">✂️</div>
+                        <div>Tijera</div>
+                    </button>
+                    <button class="boton-eleccion-jugada" id="btnLagarto" data-jugada="lagarto">
+                        <div class="icono-jugada">🦎</div>
+                        <div>Lagarto</div>
+                    </button>
+                    <button class="boton-eleccion-jugada" id="btnSpock" data-jugada="spock">
+                        <div class="icono-jugada">🖖</div>
+                        <div>Spock</div>
+                    </button>
+                </div>
+            </section>
+
+            <section class="panel-batalla">
+                <h2>Batalla</h2>
+                <div class="contenedor-jugadores">
+                    
+                    <div class="jugador">
+                        <div class="etiqueta-jugador">TÚ</div>
+                        <div id="display-usuario" class="mostrar-jugada">
+                            <div class="placeholder">?</div>
+                        </div>
+                    </div>
+
+                    <div class="vs-circle">VS</div>
+
+                    <div class="jugador">
+                        <div class="etiqueta-jugador">CPU</div>
+                        <div id="display-cpu" class="mostrar-jugada">
+                            <div class="placeholder">?</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+
+        <div class="paneles-abajo">
+            
+            <section class="contenedor-resultado">
+                <div class="resultados">
+                    <div id="mensaje-resultado" class="mensaje-resultado">¡Batalla!</div>
+                </div>
+
+                <div class="estadisticas-juego">
+                    <div class="panel-estadistica">
+                        <div id="contador-victorias" class="valor-estadistica">0</div>
+                        <div class="etiqueta-estadistica">VICTORIAS</div>
+                    </div>
+                    <div class="panel-estadistica">
+                        <div id="contador-derrotas" class="valor-estadistica">0</div>
+                        <div class="etiqueta-estadistica">DERROTAS</div>
+                    </div>
+                    <div class="panel-estadistica">
+                        <div id="contador-empates" class="valor-estadistica">0</div>
+                        <div class="etiqueta-estadistica">EMPATES</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel-opcional">
+                <button id="btnReiniciar" class="btn-opcional">REINICIAR JUEGO</button>
+                <button id="btnReglas" class="btn-opcional">MOSTRAR REGLAS</button>
+            </section>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>Proyecto evaluación RA 03 - Lenguajes de marcas y sistemas de gestión de información</p>
+        <p>Proyecto realizado por: ISMAEL BELHACH JIMENEZ (Declaro que no he usado IA en el proyecto)</p>
+    </footer>
+
+    <script src="js/javascript.js"></script>
+
+</body>
+</html>
